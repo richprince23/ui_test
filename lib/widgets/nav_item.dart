@@ -23,14 +23,13 @@ class _NavItemState extends State<NavItem> {
       child: Container(
         padding: const EdgeInsets.all(10).copyWith(bottom: 0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
           children: [
             Icon(
               widget.icon,
               color: curPage == widget.index ? priCol : Colors.grey,
             ),
-            // Spacer(),
             curPage == widget.index
                 ? Container(
                     margin: const EdgeInsets.only(top: 5),

@@ -15,8 +15,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   @override
   void initState() {
-    selectedIndex = 0;
     super.initState();
+    selectedIndex = 0;
   }
 
   @override
