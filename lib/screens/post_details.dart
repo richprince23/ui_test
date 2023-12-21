@@ -210,6 +210,53 @@ class _PostDetailsState extends State<PostDetails> {
                 ),
               ),
             ),
+
+            Container(
+              color: Colors.white,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        // borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: TextField(
+                              decoration: InputDecoration(
+                                hintText: "Add a comment...",
+
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                  borderSide:
+                                      const BorderSide(color: Colors.grey),
+                                ),
+                                // focusedBorder:
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.all(10).copyWith(left: 0),
+                    height: 60,
+                    width: 60,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: priCol,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Icon(Icons.send, color: Colors.white),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
