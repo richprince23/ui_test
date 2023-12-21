@@ -15,10 +15,10 @@ class PostsScreen extends StatelessWidget {
         subred: "AskReddit",
         body:
             "What's something you've gotten away with as a kid because \"they're young and don't know what they're doing!\" when really you knew exactly what you were doing?",
+        isTrending: true,
         hours: 7,
         isAvatarIcon: true,
       ),
-      isTrending: true,
     ),
     PostWidget(
       post: Post(
@@ -28,9 +28,9 @@ class PostsScreen extends StatelessWidget {
         subred: "CoronaVirus",
         body: "Navigating the New Normal",
         hours: 16,
+        hasMedia: true,
         isAvatarIcon: false,
       ),
-      hasMedia: true,
     ),
     PostWidget(
       post: Post(
@@ -48,9 +48,6 @@ class PostsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // get screen size
-    // var size = MediaQuery.of(context).size;
-
     return Scaffold(
       backgroundColor: Colors.white.withOpacity(0.2),
       // primary: true,

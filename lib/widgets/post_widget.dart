@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:ui_test/constants.dart';
 import 'package:ui_test/models/post.dart';
+import 'package:ui_test/screens/post_details.dart';
 import 'package:ui_test/widgets/media_widget.dart';
 import 'package:unicons/unicons.dart';
 
 class PostWidget extends StatefulWidget {
   final Post post;
 
-  final bool? isTrending;
-  final bool? hasMedia;
-
   const PostWidget({
     super.key,
     required this.post,
-    this.isTrending = false,
-    this.hasMedia = false,
   });
 
   @override
@@ -35,7 +31,14 @@ class _PostWidgetState extends State<PostWidget> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PostDetails(post: widget.post),
+          ),
+        );
+      },
       child: Container(
         margin: const EdgeInsets.symmetric(
           horizontal: 10,
@@ -49,7 +52,7 @@ class _PostWidgetState extends State<PostWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            widget.isTrending!
+            widget.post.isTrending!
                 ? Container(
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     margin: const EdgeInsets.only(bottom: 10),
@@ -122,7 +125,7 @@ class _PostWidgetState extends State<PostWidget> {
             ),
             const SizedBox(height: 10),
             // show video thumbnail if post has media
-            widget.hasMedia!
+            widget.post.hasMedia!
                 ? const MediaWidget()
                 : const SizedBox.shrink(),
             // author and elapsed hours

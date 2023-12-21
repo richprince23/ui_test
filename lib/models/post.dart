@@ -8,7 +8,12 @@ class Post {
   final int hours;
   final bool isAvatarIcon;
 
+  final bool? isTrending;
+  final bool? hasMedia;
+
   Post({
+    this.isTrending = false,
+    this.hasMedia = false,
     required this.likeCount,
     required this.commentCount,
     required this.author,
@@ -18,4 +23,3 @@ class Post {
     required this.isAvatarIcon,
   });
 }
-
