@@ -53,7 +53,6 @@ class _NavItemState extends State<NavItem> {
 
 class PageState extends ChangeNotifier {
   int _curPage = 0;
-  bool _hasConnection = false;
 
   // get current page
   get curPage => _curPage;
