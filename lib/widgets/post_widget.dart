@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_test/constants.dart';
 import 'package:ui_test/models/post.dart';
+import 'package:ui_test/widgets/media_widget.dart';
 import 'package:unicons/unicons.dart';
 
 class PostWidget extends StatefulWidget {
@@ -33,7 +34,8 @@ class _PostWidgetState extends State<PostWidget> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return InkWell(onTap: () {},
+    return InkWell(
+      onTap: () {},
       child: Container(
         margin: const EdgeInsets.symmetric(
           horizontal: 10,
@@ -121,37 +123,7 @@ class _PostWidgetState extends State<PostWidget> {
             const SizedBox(height: 10),
             // show video thumbnail if post has media
             widget.hasMedia!
-                ? Stack(
-                    children: [
-                      Container(
-                        height: 160,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                            image:
-                                AssetImage('assets/images/video_thumbnail.jpg'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        top: 50,
-                        left: size.width / 2 - 60,
-                        child: Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: const ShapeDecoration(
-                            color: Colors.white,
-                            shape: CircleBorder(),
-                          ),
-                          child: Icon(
-                            Icons.play_arrow,
-                            color: priCol,
-                            size: 32,
-                          ),
-                        ),
-                      )
-                    ],
-                  )
+                ? const MediaWidget()
                 : const SizedBox.shrink(),
             // author and elapsed hours
             Padding(
